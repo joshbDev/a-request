@@ -1,0 +1,53 @@
+{
+  "name": "a-request",
+  "version": "1.0.0",
+  "author": {},
+  "babel": {
+    "presets": [
+      "es2015"
+    ],
+    "plugins": [
+      "transform-async-to-generator",
+      "transform-runtime"
+    ]
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp",
+    "test": "gulp test",
+    "build": "gulp build",
+    "setup": "gulp build",
+    "lint": "gulp lint",
+    "validate": "npm ls"
+  },
+  "devDependencies": {
+    "babel-core": "^6.9.1",
+    "babel-plugin-transform-async-to-generator": "^6.8.0",
+    "babel-plugin-transform-runtime": "^6.9.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-runtime": "^6.9.2",
+    "del": "^2.2.0",
+    "gulp": "^3.8.7",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-babel": "^6.1.1",
+    "gulp-concat": "^2.3.4",
+    "gulp-cssnano": "^2.1.0",
+    "gulp-eslint": "^1.1.1",
+    "gulp-iife": "^0.2.4",
+    "gulp-jasmine": "^2.2.1",
+    "gulp-load-plugins": "^1.2.0",
+    "gulp-plumber": "^0.6.6",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^0.3.1",
+    "jasmine": "^2.4.1",
+    "karma": "^0.13.19",
+    "pre-commit": "^1.1.3",
+    "run-sequence": "^1.0.2"
+  },
+  "engines": {
+    "node": ">=0.12.0"
+  },
+  "pre-commit": [
+    "lint"
+  ]
+}
