@@ -1,11 +1,5 @@
 'use strict';
 
-var _promise = require('babel-runtime/core-js/promise');
-
-var _promise2 = _interopRequireDefault(_promise);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 var SUCCESS = 'SUCCESS';
 var FAILED = 'FAILED';
 var GET = 'GET';
@@ -14,7 +8,7 @@ var DONE = 4;
 var OK = [200, 299];
 
 function get(url) {
-  return new _promise2.default(function (resolve, reject) {
+  return new Promise(function (resolve, reject) {
     makeCall(GET, url).then(function (_ref) {
       var response = _ref.response;
       var status = _ref.status;
@@ -28,7 +22,7 @@ function post(url, postData) {
   var objectToSend = {
     postData: postData
   };
-  return new _promise2.default(function (resolve, reject) {
+  return new Promise(function (resolve, reject) {
     makeCall(POST, url, objectToSend).then(function (_ref2) {
       var response = _ref2.response;
       var status = _ref2.status;
@@ -43,7 +37,7 @@ function makeCall() {
   var url = arguments[1];
   var data = arguments[2];
 
-  return new _promise2.default(function (resolve) {
+  return new Promise(function (resolve) {
     var request = new XMLHttpRequest();
     request.open(type, url);
     if (data && data.setHeaders && data.setHeaders.length) {
